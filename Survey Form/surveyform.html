@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Pemetaan Minat Belajar</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
+    <h1 id="title" class="text-2xl font-bold mb-2 text-gray-800">Formulir Pemetaan Minat Belajar</h1>
+    <p id="description" class="mb-6 text-gray-600">Isi formulir di bawah ini untuk membantu kami memahami minat dan gaya belajar Anda.</p>
+
+    <form id="survey-form" class="space-y-6" action="https://formspree.io/f/xkgbvwjj" method="POST">
+      <div>
+        <label id="name-label" for="name" class="block text-gray-700 font-semibold">Nama:</label>
+        <input id="name" name="name" type="text" placeholder="Masukkan nama lengkap" required class="w-full p-2 border border-gray-300 rounded-md" />
+      </div>
+
+      <div>
+        <label id="email-label" for="email" class="block text-gray-700 font-semibold">Email:</label>
+        <input id="email" name="email" type="email" placeholder="contoh@email.com" required class="w-full p-2 border border-gray-300 rounded-md" />
+      </div>
+
+      <div>
+        <label id="number-label" for="number" class="block text-gray-700 font-semibold">Jam belajar per hari:</label>
+        <input id="number" name="hours" type="number" placeholder="1 - 10" min="1" max="10" required class="w-full p-2 border border-gray-300 rounded-md" />
+      </div>
+
+      <div>
+        <label for="dropdown" class="block text-gray-700 font-semibold">Topik utama yang ingin dipelajari:</label>
+        <select id="dropdown" name="topic" required class="w-full p-2 border border-gray-300 rounded-md">
+          <option value="">-- Pilih salah satu --</option>
+          <option value="UTBK">UTBK</option>
+          <option value="CPNS">CPNS</option>
+          <option value="Programming">Programming</option>
+          <option value="Bimbel">Bimbel</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend class="block text-gray-700 font-semibold mb-2">Gaya belajar kamu:</legend>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="learning-style" value="Visual" required class="mr-2" /> Visual
+        </label>
+        <label class="inline-flex items-center mr-4">
+          <input type="radio" name="learning-style" value="Auditori" required class="mr-2" /> Auditori
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="learning-style" value="Kinestetik" required class="mr-2" /> Kinestetik
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend class="block text-gray-700 font-semibold mb-2">Topik yang kamu minati (boleh lebih dari satu):</legend>
+        <label class="block"><input type="checkbox" name="interest" value="Matematika" class="mr-2" /> Matematika</label>
+        <label class="block"><input type="checkbox" name="interest" value="Logika" class="mr-2" /> Logika</label>
+        <label class="block"><input type="checkbox" name="interest" value="Programming" class="mr-2" /> Programming</label>
+        <label class="block"><input type="checkbox" name="interest" value="Bahasa Inggris" class="mr-2" /> Bahasa Inggris</label>
+      </fieldset>
+
+      <div>
+        <label for="comments" class="block text-gray-700 font-semibold">Komentar atau harapan belajar:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Tuliskan harapan atau pertanyaan kamu di sini..." class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+      </div>
+
+      <div>
+        <button id="submit" type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Kirim</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
